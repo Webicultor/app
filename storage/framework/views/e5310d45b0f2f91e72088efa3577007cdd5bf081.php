@@ -1,0 +1,1 @@
+<h1>Otra vista diferente</h1><?php /**PATH /var/www/html/resources/views/otra-vista.blade.php ENDPATH**/ ?>
