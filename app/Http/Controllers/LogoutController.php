@@ -3,27 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class LogoutController extends Controller
 {
-    public function index()
+    /* public function index()
     {
         return view('auth.login');
-    }
+    } */
 
     public function store(Request $request)
     {
         
-        $this->validate($request, [
+        /* $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
-        if(!auth()->attempt($request->only('email', 'password'), $request->remember)) {
+        if(!auth()->attempt($request->only('email', 'password'))) {
             return back()->with('mensaje', 'Credenciales incorrectas');
-        }
+        } */
 
-        return redirect()->route('posts.index', Auth::User()->username);
+        auth()->logout();
+        
+        return redirect()->route('login');
     }
 }
